@@ -34,8 +34,8 @@ plt.show()
 #  mean absolute error(MAD)=summison|xi-x^-|/n
 min_r=dataset['Age'].min()
 max_r=dataset['Age'].max()
-range=max_r-min_r
-print (range)
+range_val=max_r-min_r
+print (range_val)
 
 sec_a=np.array([75,65,73,68,72,76])
 sec_b=np.array([90,47,43,96,93,51])
@@ -63,11 +63,11 @@ plt.show()
 
 print(np.percentile(dataset["Age"],25))
 
-Skewness tells the shape of data distribution (left or right tilted)
-📊 Types of Skewness (very important) curve
-normal distribution(no skew)
-2️⃣ Positive Skew (Right skew)
-3️⃣ Negative Skew (Left skew)
+# Skewness tells the shape of data distribution (left or right tilted)
+# 📊 Types of Skewness (very important) curve
+# normal distribution(no skew)
+# 2️⃣ Positive Skew (Right skew)
+# 3️⃣ Negative Skew (Left skew)
 
 
 
@@ -82,8 +82,8 @@ print(data.head(3))
 print(data.info())
 
 
-Correlation tells how strongly two variables are related (range: -1 to +1)
-Covariance tells direction of relationship (positive or negative), but NOT strength clearly
+# Correlation tells how strongly two variables are related (range: -1 to +1)
+# Covariance tells direction of relationship (positive or negative), but NOT strength clearly
 
 data_corr=data.select_dtypes(["float64","int64"]).corr()
 data_cov=data.select_dtypes(["float64","int64"]).cov()
@@ -126,31 +126,22 @@ sns.kdeplot(x="Sample_mean", data=Sample_m)
 plt.title("Sampling Distribution (CLT)")
 plt.show()
 
-hypothesis testing 
-null hypothesis=hO(hnot)
-alternative hypothesis (Ha)
+##
 
 
-z test  smaple data>30
-pop std deviation
-mean()
-no of sample data
-big data
+# t  test smaple data<30
+# population data mean()
+# sample data mean and std 
+# no of sample data
+# small data
 
 
-t  test smaple data<30
-population data mean()
-sample data mean and std 
-no of sample data
-small data
+# find crtical values 
+# “We assume truth (H₀) and try to prove it wrong using data.”
 
-
-find crtical values 
-“We assume truth (H₀) and try to prove it wrong using data.”
-
-a teacher claims that the mean score of student in his class is greater than 82 with a standard deaviatiom
-of 20  if a smaple of 81 students was selected with a mean score of 90
-(z test)
+#a teacher claims that the mean score of student in his class is greater than 82 with a standard deaviatiom
+#of 20  if a smaple of 81 students was selected with a mean score of 90
+#(z test)
 import scipy.stats as st
 import numpy as np
 s_x=90
@@ -170,10 +161,10 @@ if z_table< z_cal:
 else:
     print("ho is right")
 
-a manufactuer calims that the avg weight of a bag of potato is 150gm
-a sample of 25 bags is taken and the avg weight is found to be 148grams
-with a stadard deviation of of 5 grams test the manufacturer claims using a 
-one tailed t test with a significance level of 0.05
+# a manufactuer calims that the avg weight of a bag of potato is 150gm
+# a sample of 25 bags is taken and the avg weight is found to be 148grams
+# with a stadard deviation of of 5 grams test the manufacturer claims using a 
+# one tailed t test with a significance level of 0.05
 
 import scipy.stats as st
 t_table =st.t.ppf(0.05,24)
@@ -188,7 +179,7 @@ t_cal=(80-75)/np.sqrt((25/20)+(26/20))
 print(t_cal)
 
 
-chi-square test
+# chi-square test
 
 import numpy as np
 
