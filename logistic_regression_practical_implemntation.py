@@ -126,3 +126,11 @@ for actual, pred in zip(y_test,y_pred):
       print("TN:",tn)
       print("FP:", fp)
       print("FN:", fn)
+
+      #limitations of logistic regression
+      #1. liner boundry only
+      #2 outliers sensitve 
+      #3. multicollinearity issue
+      #4. overfitting possible
+      #5.complex relationship (complex patterns)
+      #6.needs proper scaling 

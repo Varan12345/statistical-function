@@ -16,7 +16,6 @@ X_train, X_test, y_train, y_test = train_test_split(df.iloc[:,1:],df.iloc[:,0] ,
 
 print(X_train.head())
 print(X_train.shape)
-
 from sklearn.preprocessing import StandardScaler
 scaler= StandardScaler()
 
@@ -72,3 +71,17 @@ plt.scatter(X['radius_mean'],X['texture_mean'],c=y)
 plt.xlabel("radius")
 plt.ylabel("texture")
 plt.show()
+
+#overfitting and under fitting
+# when value of k is greater than underfitting 
+# when value of k is smaler than overfitting 
+#try to find middle value 
+
+# failure of knn
+# 1. large dataset (lazy learning technique)
+# 2. predition slow bcz of big dataset
+# 3. high dimensional data (not measured distance in high dimnesional data)
+# 4. knn works not properply with outliers (it is snsitve )
+# 5. non homogenous features scale(if distance is not relible)
+# 6. imbalenced dataset
+#7. knn for inferance not worked (only for prediction)
