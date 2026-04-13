@@ -44,3 +44,20 @@ score=accuracy_score(y_pred,y_test)
 print (score)
 
 print(classification_report(y_pred,y_test))
+
+# prepunning
+
+parameter ={
+ 'criterion':['gini','entropy','log_loss'],
+ 'splitter':['best','random'],
+ 'max_depth':[1,2,3,4,5],
+ 'max_features':['sqrt','log2',None  ],
+ 'ccp_alpha':[0.0,0.01,0.1,0.2]
+}
+
+from sklearn.model_selection import GridSearchCV
+
+treemodel=DecisionTreeClassifier(max_depth=2)
+cv=GridSearchCV(treemodel,param_grid=parameter, cv=5,scoring='accuracy')
+print(cv.fit(X_train,y_train))
+print(cv.best_params_)
